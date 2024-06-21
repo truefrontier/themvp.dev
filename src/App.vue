@@ -80,18 +80,16 @@ function onMousemove(event) {
       </div>
       <div></div>
     </header>
-    <main class="relative z-10 pt-gr-8 pb-gr-9 text-center">
-      <div class="container mx-auto max-w-3xl">
-        <h1 class="text-6xl font-medium text-neutral-1000 rounded-xl">Learn the Craft of Building Profitable Web&nbsp;Apps</h1>
-        <h2 class=" px-gr-6 mt-gr-5 text-3xl font-thin text-teal-400 backdrop-blur-sm rounded-xl">Join a community of passionate developers dedicated to building high-impact&nbsp;MVPs.</h2>
-        <form class="mt-gr-7" name="invite" netlify>
-          <div class="flex items-center justify-center">
-            <input type="email" name="email" placeholder="Enter your email" class="input rounded-r-none shadow-lg w-grp-4" />
-            <button class="btn btn-primary rounded-l-none shadow-lg">Request Invite</button>
+    <main class="relative z-10 pt-gr-7 pb-gr-8 px-gr-6 text-center container mx-auto max-w-lg sm:max-w-3xl">
+        <h1 class="text-4xl font-bold sm:text-6xl sm:font-semibold text-neutral-1000 rounded-xl">Learn the Craft of Building Profitable Web&nbsp;Apps</h1>
+        <h2 class="mt-gr-half-5 px-gr-5 py-gr-half-5 text-xl leading-gr-6 sm:text-3xl font-normal text-teal-400 backdrop-blur-sm rounded-xl">Join a community of passionate developers dedicated to building high-impact&nbsp;MVPs.</h2>
+        <form class="mt-gr-5 sm:mt-gr-7" name="invite" netlify>
+          <div class="flex max-sm:flex-col max-sm:space-y-gr-4 items-center justify-center">
+            <input type="email" name="email" placeholder="Enter your email" class="max-sm:!w-full !max-w-gr-double-10 max-sm:text-center input sm:rounded-r-none shadow-lg w-grp-4" />
+            <button class="max-sm:w-full max-w-gr-double-10 btn btn-primary sm:rounded-l-none shadow-lg">Request Invite</button>
           </div>
-          <div class="backdrop-blur text-xs py-gr-3 text-neutral-500">Looking for full-stack devs serious about learning fast.</div>
+          <div class="text-xs py-gr-3 text-neutral-500">Looking for full-stack devs serious about learning fast.</div>
         </form>
-      </div>
     </main>
     <footer class="relative z-10 grid grid-cols-5 py-gr-5 text-sm text-neutral-500 backdrop-blur-xl">
       <div></div>
