@@ -1,36 +1,22 @@
 <script setup>
 import TechNode from './TechNode.vue';
-import { onMounted, ref } from 'vue';
 
-const mousemoveEvent = ref(null);
-onMounted(() => {
-	// find mouse and simulate mousemove event
-	setTimeout(() => {
-		mousemoveEvent.value = new MouseEvent('mousemove', {
-			clientX: window.innerWidth / 2,
-			clientY: window.innerHeight / 2,
-		});
-	}, 500)
+const props = defineProps({
+	mousemoveEvent: Object,
 });
-
-// let mousemoveTimeout = null;
-function onMousemove(event) {
-	// clearTimeout(mousemoveTimeout);
-	// mousemoveTimeout = setTimeout(() => {
-		mousemoveEvent.value = event;
-	// }, 200);
-}
 </script>
 
 <template>
-	<div class="TechBackground grid grid-cols-32" @mousemove="onMousemove">
+	<div class="TechBackground grid grid-cols-32">
 		<template v-for="i in 16">
 			<template v-for="j in 16">
-				<tech-node :hideNode="i%2 === 0" :mousemoveEvent="mousemoveEvent" class="relative z-10" />
-				<tech-node :hideNode="i%2 !== 0" :mousemoveEvent="mousemoveEvent" class="relative z-10" />
+				<!-- <tech-node :hideNode="i%2 === 0" :mousemoveEvent="props.mousemoveEvent" class="relative z-10" /> -->
+				<!-- <tech-node :hideNode="i%2 !== 0" :mousemoveEvent="props.mousemoveEvent" class="relative z-10" /> -->
+				<component :is="i % 2 ? TechNode : 'div'" :mousemoveEvent="props.mousemoveEvent" class="relative z-10" />
+				<component :is="i % 2 ? 'div' : TechNode" :mousemoveEvent="props.mousemoveEvent" class="relative z-10" />
 			</template>
 		</template>
-		<div class="bg-circuits absolute z-0 rotate-45 -inset-[100%] bg-repeat bg-center opacity-50 dark:opacity-10"></div>
+		<div class="bg-circuits absolute z-0 rotate-[35deg] -inset-[100%] bg-repeat bg-center opacity-50 dark:opacity-20"></div>
 	</div>
 </template>
 
