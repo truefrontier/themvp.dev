@@ -1,6 +1,6 @@
 <script setup>
 import TechBackground from './components/TechBackground.vue'
-
+import Logo from './components/svgs/Logo.vue'
 import { onMounted, ref, watch, computed } from 'vue';
 
 const mousemoveEvent = ref(null);
@@ -69,15 +69,37 @@ function onMousemove(event) {
 </script>
 
 <template>
-  <div class="App min-h-screen flex flex-row items-center justify-between duration-1000" :style="bgStyles" @mousemove="onMousemove">
-    <tech-background :mousemoveEvent="mousemoveEvent" class="rotate-[-23.6068deg] fixed min-w-[110vh] w-[110vw] h-[110vh] min-h-[110vw] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" />
-    <header></header>
-    <main class="pt-gr-8 pb-gr-9">
-      <div class="relative z-20">
-        <!--  -->
+  <div class="App min-h-screen flex flex-col w-full justify-between duration-1000" :style="bgStyles" @mousemove="onMousemove">
+    <tech-background :mousemoveEvent="mousemoveEvent" class="pointer-events-none rotate-[-23.6068deg] fixed z-0 min-w-[110vh] w-[110vw] h-[110vh] min-h-[110vw] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+    <header class="relative z-10 grid grid-cols-5 my-gr-6">
+      <div></div>
+      <div class="col-span-3 text-center">
+        <a href="/">
+          <Logo class="link text-neutral-1000 w-full md:w-grp-5 max-w-gr-11 mx-auto" />
+        </a>
+      </div>
+      <div></div>
+    </header>
+    <main class="relative z-10 pt-gr-8 pb-gr-9 text-center">
+      <div class="container mx-auto max-w-3xl">
+        <h1 class="text-6xl font-medium text-neutral-1000 rounded-xl">Learn the Craft of Building Profitable Web&nbsp;Apps</h1>
+        <h2 class=" px-gr-6 mt-gr-5 text-3xl font-thin text-teal-400 backdrop-blur-sm rounded-xl">Join a community of passionate developers dedicated to building high-impact&nbsp;MVPs.</h2>
+        <form class="mt-gr-7" name="invite" netlify>
+          <div class="flex items-center justify-center">
+            <input type="email" name="email" placeholder="Enter your email" class="input rounded-r-none shadow-lg w-grp-4" />
+            <button class="btn btn-primary rounded-l-none shadow-lg">Request Invite</button>
+          </div>
+          <div class="backdrop-blur text-xs py-gr-3 text-neutral-500">Looking for full-stack devs serious about learning fast.</div>
+        </form>
       </div>
     </main>
-    <footer></footer>
+    <footer class="relative z-10 grid grid-cols-5 py-gr-5 text-sm text-neutral-500 backdrop-blur-xl">
+      <div></div>
+      <div class="col-span-3 text-center">
+        &copy; 2024 <a href="https://truefrontierapps.com" class="link">True Frontier</a> // Building up the web, one dev at a time. 
+      </div>
+      <div></div>
+    </footer>
   </div>
 </template>
 

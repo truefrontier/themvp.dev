@@ -1,1 +1,19 @@
 @import './base.css';
+
+@layer components {
+	.link {
+		@apply font-bold underline decoration-2 underline-offset-gr-half-3 text-primary-300 hover:underline-offset-gr-double-1;
+	}
+
+	.input {
+		@apply border-0 rounded-lg px-gr-5 py-gr-4 focus:ring-primary-300/50 focus:ring-gr-2 focus:outline-none;
+	}
+
+	.btn {
+		@apply duration-300 inline-flex items-center justify-center px-gr-6 py-gr-4 font-semibold tracking-wide rounded-lg backdrop-blur focus:ring-primary-300/50 focus:ring-gr-2 focus:outline-none;
+	}
+
+	.btn-primary {
+		@apply bg-teal-400 text-light hover:bg-teal-300;
+	}
+}
