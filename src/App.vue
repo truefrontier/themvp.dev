@@ -70,7 +70,7 @@ function onMousemove(event) {
 
 <template>
   <div class="App min-h-screen flex flex-row items-center justify-between duration-1000" :style="bgStyles" @mousemove="onMousemove">
-    <tech-background :mousemoveEvent="mousemoveEvent" class="fixed min-w-[110vh] w-[110vw] h-[110vh] min-h-[110vw] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" />
+    <tech-background :mousemoveEvent="mousemoveEvent" class="rotate-[-23.6068deg] fixed min-w-[110vh] w-[110vw] h-[110vh] min-h-[110vw] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" />
     <header></header>
     <main class="pt-gr-8 pb-gr-9">
       <div class="relative z-20">
@@ -84,7 +84,7 @@ function onMousemove(event) {
 <style scoped>
 .App {
   --bg-position: 50% 50%;
-  background-image: radial-gradient(circle at var(--bg-position), rgb(var(--color-neutral-100) / 0.50) 0%, rgb(var(--color-neutral-100) / 0.80) 50%, rgb(var(--color-neutral-100) / 1) 100%);
+  background-image: radial-gradient(circle at var(--bg-position), rgb(var(--color-neutral-50) / 1) 0%, rgb(var(--color-neutral-100) / 0.50) 50%, rgb(var(--color-neutral-100) / 1) 100%);
 }
 @media (prefers-color-scheme: dark) {
   .App {

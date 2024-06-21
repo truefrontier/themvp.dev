@@ -61,7 +61,7 @@ const styles = computed(() => {
 	return {
 		// backdropFilter: `blur(24px)`,
 		// '--tw-bg-opacity': `${100 - (Math.abs(xMultiplier.value * 20) + Math.abs(yMultiplier.value * 20) + 20)}%`,
-		'--node-shadow-opacity': `calc(${Math.abs(xMultiplier.value * 4) + Math.abs(yMultiplier.value * 4)}% + var(--node-shadow-opacity-min, 6%))`,
+		'--node-shadow-opacity': `calc(${Math.abs(xMultiplier.value * 6) + Math.abs(yMultiplier.value * 6)}% + var(--node-shadow-opacity-min, 6%))`,
 		boxShadow: `${xMultiplier.value * 4}px ${yMultiplier.value * 4}px var(--node-blur1)  rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
 			${xMultiplier.value * 8}px ${yMultiplier.value * 8}px var(--node-blur2) rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
 			${xMultiplier.value * 16}px ${yMultiplier.value * 16}px var(--node-blur3) rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
@@ -80,7 +80,7 @@ const backdropBlur = computed(() => {
 
 <template>
 	<div class="TechNode flex items-center justify-center" ref="node" :style="backdropBlur">
-		<div v-if="!hideNode" class="backdrop-blur-xl duration-500 w-1/2 max-w-gr-half-7 aspect-square bg-light dark:bg-neutral-100/30 bg-opacity-60 rounded-full" :style="styles"></div>
+		<div v-if="!hideNode" class=" backdrop-blur-xl duration-200 w-1/2 max-w-gr-half-6 aspect-square bg-light dark:bg-neutral-100/30 bg-opacity-60 rounded-full" :style="styles"></div>
 	</div>
 </template>
 
@@ -107,7 +107,7 @@ const backdropBlur = computed(() => {
 	@media (prefers-color-scheme: dark) {
 		:root {
 			--node-shadow-color: var(--black);
-			--node-shadow-opacity-min: 20%;
+			--node-shadow-opacity-min: 30%;
 		}
 	}
 </style>

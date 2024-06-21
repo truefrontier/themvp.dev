@@ -16,7 +16,7 @@ const props = defineProps({
 				<component :is="i % 2 ? 'div' : TechNode" :mousemoveEvent="props.mousemoveEvent" class="relative z-10" />
 			</template>
 		</template>
-		<div class="bg-circuits absolute z-0 rotate-[35deg] -inset-[100%] bg-repeat bg-center opacity-50 dark:opacity-20"></div>
+		<div class="bg-circuits absolute z-0 rotate-[-99.9995deg] -inset-[100%] bg-repeat bg-center opacity-50 dark:opacity-20"></div>
 	</div>
 </template>
 
