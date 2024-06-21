@@ -17,7 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <form hidden name="invite" netlify netlify-honeypot="name">
+        <input type="email" name="email" />
+      </form>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
