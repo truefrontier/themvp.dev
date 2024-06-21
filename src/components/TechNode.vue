@@ -3,6 +3,10 @@ import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 
 const props = defineProps({
 	mousemoveEvent: Object,
+	hideNode: {
+		type: Boolean,
+		default: false,
+	},
 });
 
 const mouseEvent = computed(() => props.mousemoveEvent);
@@ -51,25 +55,31 @@ watch(mouseEvent, (event) => {
 	if (!event) return;
 	run(event);
 	// requestAnimationFrame(run.bind(this, event));
-}, { immediate: true })
-
+}, { immediate: true });
 
 const styles = computed(() => {
 	return {
-		filter: `blur(${(Math.abs(xMultiplier.value) + Math.abs(yMultiplier.value)) * 1.5}px)`,
-		'--tw-bg-opacity': Math.abs(xMultiplier * 100) > 25 || Math.abs(yMultiplier * 100) > 25 ? '100%' : '50%',
-		boxShadow: `${xMultiplier.value * 4}px ${yMultiplier.value * 4}px var(--node-blur1)  rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
-			${xMultiplier.value * 8}px ${yMultiplier.value * 8}px var(--node-blur2) rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
-			${xMultiplier.value * 16}px ${yMultiplier.value * 16}px var(--node-blur3) rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
-			${xMultiplier.value * 32}px ${yMultiplier.value * 32}px var(--node-blur4) rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
-			${xMultiplier.value * 64}px ${yMultiplier.value * 64}px var(--node-blur5) rgb(var(--node-shadow-color) / var(--node-shadow-opacity))`,
+		// backdropFilter: `blur(24px)`,
+		// '--tw-bg-opacity': Math.abs(xMultiplier * 100) > 25 || Math.abs(yMultiplier * 100) > 25 ? '100%' : '50%',
+		boxShadow: `${xMultiplier.value * 2}px ${yMultiplier.value * 2}px var(--node-blur1)  rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
+			${xMultiplier.value * 4}px ${yMultiplier.value * 4}px var(--node-blur2) rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
+			${xMultiplier.value * 8}px ${yMultiplier.value * 8}px var(--node-blur3) rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
+			${xMultiplier.value * 16}px ${yMultiplier.value * 16}px var(--node-blur4) rgb(var(--node-shadow-color) / var(--node-shadow-opacity)),
+			${xMultiplier.value * 32}px ${yMultiplier.value * 32}px var(--node-blur5) rgb(var(--node-shadow-color) / var(--node-shadow-opacity))`,
 	};
-})
+});
+
+const backdropBlur = computed(() => {
+	return {
+		backdropFilter: `blur(${(Math.abs(xMultiplier.value) + Math.abs(yMultiplier.value)) * 1.5}px)`,
+		filter: `blur(${(Math.abs(xMultiplier.value) + Math.abs(yMultiplier.value)) * 1.5}px)`,
+	};
+});
 </script>
 
 <template>
-	<div class="TechNode flex items-center justify-center" ref="node">
-		<div class="duration-500 w-gr-half-7 h-gr-half-7 bg-light dark:bg-neutral-200 bg-opacity-60 rounded-full" :style="styles"></div>
+	<div class="TechNode flex items-center justify-center" ref="node" :style="backdropBlur">
+		<div v-if="!hideNode" class="backdrop-blur-xl duration-300 w-1/2 aspect-square bg-light/60 dark:bg-neutral-200/60 rounded-full" :style="styles"></div>
 	</div>
 </template>
 
