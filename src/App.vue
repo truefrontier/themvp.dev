@@ -81,7 +81,7 @@ function onMousemove(event) {
       <div></div>
     </header>
     <main class="relative z-10 pt-gr-7 pb-gr-8 px-gr-6 text-center container mx-auto max-w-lg sm:max-w-3xl">
-        <h1 class="text-4xl font-bold sm:text-6xl sm:font-semibold text-neutral-1000 rounded-xl">Learn the Craft of Building Profitable Web&nbsp;Apps</h1>
+        <h1 class="text-4xl font-bold sm:text-6xl sm:font-semibold text-neutral-1000 rounded-xl">Learn the Craft of Building Profitable Web&nbsp;Apps, ⚡️&nbsp;Fast</h1>
         <h2 class="mt-gr-half-5 px-gr-5 py-gr-half-5 text-xl leading-gr-6 sm:text-3xl font-normal text-teal-400 backdrop-blur-sm rounded-xl">Join a community of passionate developers dedicated to building high-impact&nbsp;MVPs.</h2>
         <form class="mt-gr-5 sm:mt-gr-7" name="invite" data-netlify="true" method="POST" data-netlify-honeypot="name">
           <div class="flex max-sm:flex-col max-sm:space-y-gr-4 items-center justify-center">
